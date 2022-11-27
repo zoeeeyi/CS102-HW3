@@ -104,28 +104,31 @@ class Tree
             preOrder(localRoot.rightChild);
          }
       }
-// -------------------------------------------------------------
-   private void inOrder(Node localRoot) //implement in Order traversal
-   {
-      if(localRoot != null)
+      
+      private void inOrder(Node localRoot) //implement in Order traversal
       {
-         inOrder(localRoot.leftChild);
-         System.out.print(localRoot.iData + " ");
-         inOrder(localRoot.rightChild);
-      }
-   }
-// -------------------------------------------------------------
-   private void postOrder(Node localRoot) //implement postOrder traversal
-      {
-  
+         if(localRoot != null)
+         {
+            inOrder(localRoot.leftChild);
+            System.out.print(localRoot.iData + " ");
+            inOrder(localRoot.rightChild);
+         }
       }
 
+      private void postOrder(Node localRoot) //implement postOrder traversal
+      {
+         if(localRoot != null)
+         {
+            postOrder(localRoot.leftChild);
+            postOrder(localRoot.rightChild);
+            System.out.print(localRoot.iData + " ");
+         }
+      }
 
-///////////////////////////////////////////////////////////////
-    private void isBST(Node localRoot) //this method will take a tree as an input and will PRINT to the screen if the tree is a BST or NOT.
-    {
-   
-    } 
+      private void isBST(Node localRoot) //this method will take a tree as an input and will PRINT to the screen if the tree is a BST or NOT.
+      {
+            
+      } 
 
 // -------------------------------------------------------------
    public boolean delete(int key) // delete node with given key (iData) (if there are multiple nodes match key with iData you have to delete all of them.
